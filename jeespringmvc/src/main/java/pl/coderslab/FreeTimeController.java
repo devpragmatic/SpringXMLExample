@@ -42,13 +42,13 @@ public class FreeTimeController {
         return informAboutStatus(now);
     }
 
-    private String informAboutStatus(LocalDateTime now) {
-        DayOfWeek currentDateOfWeek = now.getDayOfWeek();
+    private String informAboutStatus(LocalDateTime date) {
+        DayOfWeek currentDateOfWeek = date.getDayOfWeek();
         List<DayOfWeek> freeDays = Arrays.asList(DayOfWeek.SATURDAY, DayOfWeek.SUNDAY);
         if (freeDays.contains(currentDateOfWeek)) {
             return "Wolne";
         }
-        int hour = now.getHour();
+        int hour = date.getHour();
         if (hour >= 9 && hour <= 17) {
             return "Pracuje, nie dzwoń";
         }
