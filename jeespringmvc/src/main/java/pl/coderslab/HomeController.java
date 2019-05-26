@@ -13,7 +13,7 @@ public class HomeController {
     @RequestMapping({"/witam"})
     @ResponseBody
     public String hello() {
-        return "index.jsp";
+        return "formView.jsp";
     }
 
     @RequestMapping(path = "/", produces = "text/html; charset=UTF-8", method = RequestMethod.GET)
